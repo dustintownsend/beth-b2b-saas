@@ -29,7 +29,7 @@ export const organization = new Elysia()
     }
 
     const inviteCode = organization.database_name;
-    const ticketCreationUrl = `${config.env.HOST_URL}/${organization.id}/ticket/new`;
+    const ticketCreationUrl = `${config.env.HOST_URL}${organization.id}/ticket/new`;
     const employees = await db.query.user.findMany({
       where: (user, { eq }) => eq(user.organization_id, orgId),
     });
